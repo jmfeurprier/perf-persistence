@@ -1,0 +1,26 @@
+{
+	"name"        : "perf/persistence",
+	"type"        : "library",
+	"license"     : "MIT",
+	"description" : "perf, the PHP Extensible and Robust Framework",
+	"require"     : {
+		"php"             : ">=5.3.3",
+		"perf/annotation" : "~1.0",
+		"perf/caching"    : "~1.0",
+		"perf/database"   : "~1.0"
+	},
+	"require-dev": {
+		"ext-xdebug"                : "~2.1",
+		"pdepend/pdepend"           : "~2.0",
+		"phing/phing"               : "~2.0",
+		"phpunit/phpunit"           : "~4.0",
+		"phpmd/phpmd"               : "~2.0",
+		"sebastian/phpcpd"          : "~2.0",
+		"squizlabs/php_codesniffer" : "~2.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"perf\\Persistence\\" : "lib/perf/Persistence/"
+		}
+	}
+}
