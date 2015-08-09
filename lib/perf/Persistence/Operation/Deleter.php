@@ -64,13 +64,13 @@ class Deleter extends Operator
 
         $sql = "DELETE FROM {$sqlTable} WHERE {$sqlWhere}";
 
-        if (!is_null($sorting)) {
+        if (null !== $sorting) {
             $sqlOrderBy = $sorting->getClause();
 
             $sql .= " ORDER BY {$sqlOrderBy}";
         }
 
-        if (is_null($limit)) {
+        if (null === $limit) {
             // No limit
         } elseif (is_int($limit)) {
             if ($limit < 1) {

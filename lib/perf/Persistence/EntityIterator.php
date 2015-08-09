@@ -73,7 +73,7 @@ class EntityIterator implements \Iterator
      */
     public function current()
     {
-        if (is_null($this->current)) {
+        if (null === $this->current) {
             $entity = $this->entityImporter->import($this->entityMetadata, $this->result->current());
 
             $this->current = $entity;

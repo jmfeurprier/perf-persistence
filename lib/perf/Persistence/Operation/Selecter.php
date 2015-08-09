@@ -146,7 +146,7 @@ class Selecter extends Operator
      */
     private function where(\perf\Db\QueryFilter $filter = null)
     {
-        if (!is_null($filter)) {
+        if (null !== $filter) {
             $this->sqlChunks[]  = 'WHERE ' . $filter->getClause();
 
             foreach ($filter->getParameters() as $parameter) {
@@ -163,7 +163,7 @@ class Selecter extends Operator
      */
     private function orderBy(\perf\Db\QuerySorting $sorting = null)
     {
-        if (!is_null($sorting)) {
+        if (null !== $sorting) {
             $this->sqlChunks[] = 'ORDER BY ' . $sorting->getClause();
         }
     }
@@ -182,7 +182,7 @@ class Selecter extends Operator
 
         $hasOffset = ($offset > 0);
 
-        if (is_null($limit)) {
+        if (null === $limit) {
             if (!$hasOffset) {
                 return;
             }
@@ -219,7 +219,7 @@ class Selecter extends Operator
             if ($limit < 1) {
                 throw new \InvalidArgumentException('Limit must be greater than zero.');
             }
-        } elseif (!is_null($limit)) {
+        } elseif (null !== $limit) {
             throw new \InvalidArgumentException('Limit must be an integer or null.');
         }
     }

@@ -60,14 +60,16 @@ class PersisterBuilder
      */
     public function build()
     {
-        if (is_null($this->cacheClient)) {
+        if (null === $this->cacheClient) {
             $cacheStorage = new \perf\Caching\VolatileStorage();
 
-            $this->cacheClient = new \perf\Caching\CacheClient($cacheStorage);
+            $cacheClient = new \perf\Caching\CacheClient($cacheStorage);
+        } else {
+            $cacheClient = $this->cacheClient;
         }
 
         $entityMetadataPool = new EntityMetadataPool();
-        $entityMetadataPool->setCacheClient($this->cacheClient);
+        $entityMetadataPool->setCacheClient($cacheClient);
 
         $operatorFactory = new \perf\Persistence\Operation\OperatorFactory();
         $operatorFactory->setEntityMetadataPool($entityMetadataPool);

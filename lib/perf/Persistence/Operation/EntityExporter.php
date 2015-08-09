@@ -91,7 +91,7 @@ class EntityExporter
             $reflectionProperty->setAccessible(false);
         }
 
-        if (!is_null($value)) {
+        if (null !== $value) {
             if (is_bool($value)) {
                 $value = (int) $value;
             }

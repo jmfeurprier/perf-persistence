@@ -27,7 +27,7 @@ class Counter extends Operator
 
         $sql = "SELECT COUNT(0) FROM {$sqlTable}";
 
-        if (is_null($filter)) {
+        if (null === $filter) {
             $parameters = array();
         } else {
             $sql .= ' WHERE ' . $filter->getClause();
