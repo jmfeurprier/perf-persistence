@@ -2,7 +2,7 @@
 	"name"        : "perf/persistence",
 	"type"        : "library",
 	"license"     : "MIT",
-	"description" : "perf, the PHP Extensible and Robust Framework",
+	"description" : "Allows to persist and retrieve entities with databases.",
 	"require"     : {
 		"php"             : ">=5.3.3",
 		"perf/annotation" : "~1.0",
